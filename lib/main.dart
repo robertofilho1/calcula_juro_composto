@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
       double future_value = capital * (pow(variation, time));
       print(future_value);
 
-      _InfoText= "O valor financiado total é ${future_value.toStringAsFixed(2)}";
+      _InfoText= "O valor total do empréstimo é de ${future_value.toStringAsFixed(2)}";
 
     });
   }
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Simulador Financiamento"),
+          title: Text("Simulador Empréstimo"),
           centerTitle: true,
           backgroundColor: Colors.black,
           actions: <Widget>[
@@ -75,28 +75,28 @@ class _HomeState extends State<Home> {
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        labelText: "Capital em Reais",
+                        labelText: "Valor do Empréstimo",
                         labelStyle: TextStyle(color: Colors.black)),
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.black, fontSize: 15.0),
                     controller: CapitalController,
                     validator: (value) {
                       if (value.isEmpty) {
-                        return "Insira o Capital!";
+                        return "Insira o Valor do Empréstimo!";
                       }
                     },
                   ),
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        labelText: "Prazo Financiamento",
+                        labelText: "Prazo Empréstimo",
                         labelStyle: TextStyle(color: Colors.black)),
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.black, fontSize: 15.0),
                     controller: TimeController,
                     validator: (value) {
                       if (value.isEmpty) {
-                        return "Insira o tempo do financiamento!";
+                        return "Insira o tempo do Empréstimo!";
                       }
                     },
                   ),
